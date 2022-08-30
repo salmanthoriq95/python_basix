@@ -27,15 +27,17 @@ mc_power = int(input("total damage main char :"))
 main_enemy = input("input main enemy : ")
 enemy_weapon = input("input weapon main enemy : ")
 enemy_power = int(input("total dmg main enemy : "))
+isLose = (mc_power - enemy_power) > 0
+if isLose:
+    isLose = "menang"
+else:
+    isLose = "kalah"
 print(
     f""" 
 suatu hari {main_char} membawa {mc_weapon} ke hutan, dan bertemu dengan 
 si {main_enemy} yang sedang membawa {enemy_weapon}. karena {main_char} 
 memiliki kekuatan sebesar {mc_power} dan {main_enemy} memiliki
-kekuatan sebesar {enemy_power}, maka siapakah yang kalah? 
-total = main char power - enemy char power
-total = {mc_power - enemy_power}
-kalau semisal total di bawah nol berarti anda kalah
+kekuatan sebesar {enemy_power}, dan ternyata {main_char} {isLose}
 """
 )
 
